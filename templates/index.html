@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Spam Classification</title>
+</head>
+
+<style>
+body {
+    background-color: #92a8d1;
+}
+.tb {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+.center {
+    margin: auto;
+    text-align: center;
+    padding: 10px;
+}
+.ans {
+    margin: auto;
+    text-align: center;
+    font-size: 25px;
+}
+
+</style>
+
+<body>
+    <h1 style="text-align: center;">Spam Classification</h1>
+    <form action="{{ url_for('predict') }}" method="POST">
+    <div class="center">
+        <h3>Message:</h3>
+        <input name='message', placeholder="Enter message" size="50" required>
+    </div>
+    <div class="center"><button type="submit">Submit</button></div>
+    </form>
+
+    <div class="ans">{{prediction}}</div>
+</body>
+</html>
